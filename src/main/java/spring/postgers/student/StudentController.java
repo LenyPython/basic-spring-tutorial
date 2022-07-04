@@ -1,4 +1,4 @@
-package spring.postgers.sutdent;
+package spring.postgers.student;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -4,13 +4,15 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 
-public class StudentService {
+import org.springframework.stereotype.Service;
 
+@Service
+public class StudentService {
     public List<Student> getAllStudents() {
         return List.of(
                 new Student(
                         1L,
-                        "Paul",
+                        "Piotr",
                         "Kowalski"),
                 new Student(
                         2L,
@@ -22,5 +24,4 @@ public class StudentService {
                         "Kowalski",
                         LocalDate.of(1987, Month.FEBRUARY, 5)));
     }
-
 }

@@ -74,6 +74,10 @@ public class Student {
         this.secondName = second;
     }
 
+    public String getFullName() {
+        return this.name + " " + this.secondName;
+    }
+
     @Override
     public String toString() {
         return name + " " + secondName;

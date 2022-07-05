@@ -1,6 +1,7 @@
 package spring.postgers.student;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,12 @@ public class StudentService {
         }
 
         public void addNewStudent(Student student) {
-                System.out.println(student);
+                Optional<Student> studentOptional = studentRepository.getStudentByFullName(student.getName(),
+                                student.getSecondName());
+                if (studentOptional.isPresent()) {
+                        throw new IllegalStateException("user exists");
+                }
+                studentRepository.save(student);
 
         }
 

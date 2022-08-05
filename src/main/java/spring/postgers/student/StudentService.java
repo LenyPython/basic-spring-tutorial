@@ -18,6 +18,15 @@ public class StudentService {
                 return studentRepository.findAll();
         }
 
+        public void deleteStudent(Long id) {
+                boolean exists = studentRepository.existsById(id);
+                if (exists) {
+                        studentRepository.deleteById(id);
+                } else {
+                        throw new IllegalArgumentException("No student with this id exists");
+                }
+        }
+
         public void addNewStudent(Student student) {
                 Optional<Student> studentOptional = studentRepository.getStudentByFullName(student.getName(),
                                 student.getSecondName());
